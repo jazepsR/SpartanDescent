@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b457efd7094e96b4d8d9fc32f9c1d5b3
+timeCreated: 1493995771
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Junicode
+  fontNames:
+  - Junicode
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 017a60cf8c6ed984b85abef4866b5975
+timeCreated: 1492511449
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: BackFoot.R
+    100004: BackFoot.R.001
+    100006: BackFoot.R.001_end
+    100008: BackFoot.R_end
+    100010: BackShin.R
+    100012: BackShin.R.001
+    100014: BackThigh.R
+    100016: BackThigh.R.001
+    100018: Cube
+    100020: FrontFoot.R
+    100022: FrontFoot.R.001
+    100024: FrontFoot.R.001_end
+    100026: FrontFoot.R_end
+    100028: FrontShin.R
+    100030: FrontShin.R.001
+    100032: FrontThigh.R
+    100034: FrontThigh.R.001
+    100036: Head
+    100038: Head_end
+    100040: LowerBack.001
+    100042: Neck
+    100044: Pelvis
+    100046: Plane
+    100048: TailBot
+    100050: TailTop
+    100052: TailTop_end
+    100054: UpperBack
+    100056: //RootNode
+    400000: Armature
+    400002: BackFoot.R
+    400004: BackFoot.R.001
+    400006: BackFoot.R.001_end
+    400008: BackFoot.R_end
+    400010: BackShin.R
+    400012: BackShin.R.001
+    400014: BackThigh.R
+    400016: BackThigh.R.001
+    400018: Cube
+    400020: FrontFoot.R
+    400022: FrontFoot.R.001
+    400024: FrontFoot.R.001_end
+    400026: FrontFoot.R_end
+    400028: FrontShin.R
+    400030: FrontShin.R.001
+    400032: FrontThigh.R
+    400034: FrontThigh.R.001
+    400036: Head
+    400038: Head_end
+    400040: LowerBack.001
+    400042: Neck
+    400044: Pelvis
+    400046: Plane
+    400048: TailBot
+    400050: TailTop
+    400052: TailTop_end
+    400054: UpperBack
+    400056: //RootNode
+    2300000: Plane
+    3300000: Plane
+    4300000: Plane
+    4300002: Cube
+    7400000: Plane|PlaneAction
+    7400002: Run
+    7400004: Armature|PlaneAction
+    7400006: MidAir
+    7400008: Jump
+    7400010: idle
+    9500000: //RootNode
+    13700000: Cube
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Run
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 42
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R/BackShin.R
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R/BackShin.R/BackFoot.R
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R/BackShin.R/BackFoot.R/BackFoot.R_end
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001/BackShin.R.001
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001/BackShin.R.001/BackFoot.R.001
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001/BackShin.R.001/BackFoot.R.001/BackFoot.R.001_end
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R/FrontShin.R
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R/FrontShin.R/FrontFoot.R
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R/FrontShin.R/FrontFoot.R/FrontFoot.R_end
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001/FrontShin.R.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001/FrontShin.R.001/FrontFoot.R.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001/FrontShin.R.001/FrontFoot.R.001/FrontFoot.R.001_end
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/TailBot
+        weight: 1
+      - path: Armature/TailBot/TailTop
+        weight: 1
+      - path: Armature/TailBot/TailTop/TailTop_end
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: MidAir
+      takeName: Armature|ArmatureAction
+      firstFrame: 77
+      lastFrame: 77
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R/BackShin.R
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R/BackShin.R/BackFoot.R
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R/BackShin.R/BackFoot.R/BackFoot.R_end
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001/BackShin.R.001
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001/BackShin.R.001/BackFoot.R.001
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001/BackShin.R.001/BackFoot.R.001/BackFoot.R.001_end
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R/FrontShin.R
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R/FrontShin.R/FrontFoot.R
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R/FrontShin.R/FrontFoot.R/FrontFoot.R_end
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001/FrontShin.R.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001/FrontShin.R.001/FrontFoot.R.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001/FrontShin.R.001/FrontFoot.R.001/FrontFoot.R.001_end
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/TailBot
+        weight: 1
+      - path: Armature/TailBot/TailTop
+        weight: 1
+      - path: Armature/TailBot/TailTop/TailTop_end
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Jump
+      takeName: Armature|ArmatureAction
+      firstFrame: 42
+      lastFrame: 77
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R/BackShin.R
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R/BackShin.R/BackFoot.R
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R/BackShin.R/BackFoot.R/BackFoot.R_end
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001/BackShin.R.001
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001/BackShin.R.001/BackFoot.R.001
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001/BackShin.R.001/BackFoot.R.001/BackFoot.R.001_end
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R/FrontShin.R
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R/FrontShin.R/FrontFoot.R
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R/FrontShin.R/FrontFoot.R/FrontFoot.R_end
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001/FrontShin.R.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001/FrontShin.R.001/FrontFoot.R.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001/FrontShin.R.001/FrontFoot.R.001/FrontFoot.R.001_end
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/TailBot
+        weight: 1
+      - path: Armature/TailBot/TailTop
+        weight: 1
+      - path: Armature/TailBot/TailTop/TailTop_end
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle
+      takeName: Armature|ArmatureAction
+      firstFrame: 59
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R/BackShin.R
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R/BackShin.R/BackFoot.R
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R/BackShin.R/BackFoot.R/BackFoot.R_end
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001/BackShin.R.001
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001/BackShin.R.001/BackFoot.R.001
+        weight: 1
+      - path: Armature/Pelvis/BackThigh.R.001/BackShin.R.001/BackFoot.R.001/BackFoot.R.001_end
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R/FrontShin.R
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R/FrontShin.R/FrontFoot.R
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R/FrontShin.R/FrontFoot.R/FrontFoot.R_end
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001/FrontShin.R.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001/FrontShin.R.001/FrontFoot.R.001
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/FrontThigh.R.001/FrontShin.R.001/FrontFoot.R.001/FrontFoot.R.001_end
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerBack.001/UpperBack/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/TailBot
+        weight: 1
+      - path: Armature/TailBot/TailTop
+        weight: 1
+      - path: Armature/TailBot/TailTop/TailTop_end
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
