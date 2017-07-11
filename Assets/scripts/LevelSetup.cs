@@ -27,6 +27,7 @@ public class LevelSetup : MonoBehaviour {
                 Variables.hasWolves = false;
                 Variables.hasGhosts = false;
                 Variables.hasHands = false;
+                Variables.hasWildfire = false;
                 Variables.levelLength = 250;
                 if (Variables.shownLevelHelp)
                     Helpers.ShowGUIText("Entering the river Styx", 3.5f);
@@ -36,6 +37,7 @@ public class LevelSetup : MonoBehaviour {
                 Variables.hasWolves = false;
                 Variables.hasGhosts = true;
                 Variables.hasHands = false;
+                Variables.hasWildfire = true;
                 Variables.levelLength = 35;
                 Helpers.ShowGUIText("Entering the river Tartarus", 3.5f);
                 break;
@@ -44,6 +46,7 @@ public class LevelSetup : MonoBehaviour {
                 Variables.hasWolves = true;
                 Variables.hasGhosts = true;
                 Variables.hasHands = true;
+                Variables.hasWildfire = true;
                 Variables.levelLength = 45;
                 Helpers.ShowGUIText("Entering the river Lethe", 3.5f);
                 break;
