@@ -33,6 +33,7 @@ public static class Variables {
     public static bool hasWolves = true;
     public static bool hasGhosts = false;
     public static bool hasHands = false;
+    public static int currentArea = 0;
 
     public static bool shownLevelHelp = false;
     public static bool shownHubHelp = false;

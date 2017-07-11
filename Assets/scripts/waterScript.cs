@@ -44,15 +44,15 @@ public class waterScript : MonoBehaviour {
 		{
             if (Time.timeSinceLevelLoad > 1.0f)
             {
-                if (SceneManager.GetActiveScene().name == "Level1")
+                if (Variables.currentArea == 0)
                 {
                     rock = Resources.Load("prefabs/rock") as GameObject;
                 }
-                if (SceneManager.GetActiveScene().name == "Level2")
+                if (Variables.currentArea == 1)
                 {
                     rock = Resources.Load("prefabs/fireRock") as GameObject;
                 }
-                if (SceneManager.GetActiveScene().name == "Level3")
+                if (Variables.currentArea == 2)
                 {
                     rock = Resources.Load("prefabs/desolateRock") as GameObject;
                 }
