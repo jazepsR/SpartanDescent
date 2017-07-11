@@ -122,6 +122,7 @@ public class collisionHandler : MonoBehaviour {
             LevelSetup.SetLVL(Variables.levels.fire);
             Destroy(col.gameObject, 5.0f);            
             Variables.WaterGen.GenRandomWater();
+            skyboxControl.Instance.ChangeSkybox(1);
             /*
             Variables.currentLVL = Variables.levels.fire;
             SceneManager.LoadScene("Level2");
@@ -139,6 +140,7 @@ public class collisionHandler : MonoBehaviour {
             LevelSetup.SetLVL(Variables.levels.desolate);
             Destroy(col.gameObject, 5.0f);
             Variables.WaterGen.GenRandomWater();
+            skyboxControl.Instance.ChangeSkybox(2);
             /*
             Variables.currentLVL = Variables.levels.desolate;          
             SceneManager.LoadScene("Level3");
