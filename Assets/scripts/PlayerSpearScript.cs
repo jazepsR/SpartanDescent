@@ -28,7 +28,7 @@ public class PlayerSpearScript : MonoBehaviour
    
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "barrel")
+       /* if (col.gameObject.tag == "barrel")
         {
             Instantiate(explosion, col.transform.position,Quaternion.identity);
             Destroy(col.transform.parent.gameObject);
@@ -42,7 +42,7 @@ public class PlayerSpearScript : MonoBehaviour
             }
             Debug.Log("Hit Barrel");
             Destroy(gameObject);
-        }
+        }*/
         if (col.gameObject.tag == "wolf")
         {
             Variables.mainAudioSource.PlayOneShot(wolfHurt);
