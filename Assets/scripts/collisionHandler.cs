@@ -119,8 +119,14 @@ public class collisionHandler : MonoBehaviour {
         if(col.tag == "toFire")
         {
             Variables.currentLVL = Variables.levels.fire;
+            LevelSetup.SetLVL(Variables.levels.fire);
+            Destroy(col.gameObject, 5.0f);            
+            Variables.WaterGen.GenRandomWater();
+            /*
+            Variables.currentLVL = Variables.levels.fire;
             SceneManager.LoadScene("Level2");
             Debug.Log("Hit fire entrance trigger");
+            */
         }
         if(col.tag == "fromHub")
         {
@@ -129,9 +135,15 @@ public class collisionHandler : MonoBehaviour {
         }
         if (col.tag == "toDesolate")
         {
+            Variables.currentLVL = Variables.levels.desolate;
+            LevelSetup.SetLVL(Variables.levels.desolate);
+            Destroy(col.gameObject, 5.0f);
+            Variables.WaterGen.GenRandomWater();
+            /*
             Variables.currentLVL = Variables.levels.desolate;          
             SceneManager.LoadScene("Level3");
             Debug.Log("Hit desolate entrance trigger");
+            */
         }
         if(col.tag == "GotItem")
         {

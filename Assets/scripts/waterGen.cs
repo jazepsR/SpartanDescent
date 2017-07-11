@@ -4,14 +4,17 @@ using UnityEngine;
 
 //Klase, kas rada ūdens objektus un ar tiem saistītos šķēršļus
 public class waterGen : MonoBehaviour {
-	public GameObject waterSplit;
-    public GameObject waterStraight;
-    public GameObject waterLeft;
-    public GameObject waterRight;
-    public GameObject waterSbend;
-    public GameObject waterTreasure;
-    public GameObject waterIsland;
-    public GameObject waterFall;
+	public GameObject[] waterSplit;
+    public GameObject[] waterStraight;
+    public GameObject[] waterLeft;
+    public GameObject[] waterRight;
+    public GameObject[] waterSbend;
+    public GameObject[] waterTreasure;
+    public GameObject[] waterIsland;
+    public GameObject[] waterFall;
+    public GameObject FireTransition;
+    public GameObject DesolateTransition;
+    public int currentArea = 0;
     GameObject Gate;
     enum tiles { straight, fall,left, right,split}
     List<tiles> bannedDoubles =new List<tiles> { tiles.left, tiles.right, tiles.fall, tiles.split };
@@ -32,9 +35,9 @@ public class waterGen : MonoBehaviour {
 
         //Variables.levelLength = 3;
 
-        GenWater(waterStraight);
-        GenWater(waterStraight);
-        GenWater(waterStraight);
+        GenWater(waterStraight[currentArea]);
+        GenWater(waterStraight[currentArea]);
+        GenWater(waterStraight[currentArea]);
         GenRandomWater();
         GenRandomWater();
 
@@ -87,10 +90,21 @@ public class waterGen : MonoBehaviour {
         if(Variables.distance >= Variables.levelLength && Variables.currentLVL == Variables.levels.item)
         {
             Variables.LevelDone = true;
-            GenWater(waterTreasure);
+            GenWater(waterTreasure[currentArea]);
             return;
         }
-       
+        if(Variables.distance == Variables.FireTreshold)
+        {
+            GenWater(FireTransition);
+            currentArea = 1;
+            return;
+        }
+        if (Variables.distance == Variables.LonelyTreshold)
+        {
+            GenWater(DesolateTransition);
+            currentArea = 2;
+            return;
+        }
 
 
 
@@ -103,7 +117,7 @@ public class waterGen : MonoBehaviour {
                 }
                 else
                 {
-                    GenWater(waterSbend);
+                    GenWater(waterSbend[currentArea]);
                     lastTile = tiles.straight;
                    // UpdatePosMap();
                 }
@@ -115,7 +129,7 @@ public class waterGen : MonoBehaviour {
                 }
                 else
                 { 
-                GenWater(waterRight);
+                GenWater(waterRight[currentArea]);
                 lastTile = tiles.right;
                 }
                 break;
@@ -126,7 +140,7 @@ public class waterGen : MonoBehaviour {
                 }
                 else
                 {
-                    GenWater(waterLeft);
+                    GenWater(waterLeft[currentArea]);
                     lastTile = tiles.left;
                 }
                 break;
@@ -137,7 +151,7 @@ public class waterGen : MonoBehaviour {
                 }
                 else
                 {
-                    GenWater(waterSplit);
+                    GenWater(waterSplit[currentArea]);
                     lastTile = tiles.split;                   
                 }
                 break;
@@ -148,7 +162,7 @@ public class waterGen : MonoBehaviour {
                 }
                 else
                 {
-                    GenWater(waterIsland);
+                    GenWater(waterIsland[currentArea]);
                     lastTile = tiles.straight;                    
                 }
                 break;
@@ -159,7 +173,7 @@ public class waterGen : MonoBehaviour {
                 }
                 else
                 {
-                    GenWater(waterFall);
+                    GenWater(waterFall[currentArea]);
                     lastTile = tiles.fall;
                     // UpdatePosMap();
                 }
@@ -173,7 +187,7 @@ public class waterGen : MonoBehaviour {
                 {
 
 
-                    GenWater(waterStraight);
+                    GenWater(waterStraight[currentArea]);
                     lastTile = tiles.straight;
                     //  UpdatePosMap();
                 }
@@ -189,13 +203,7 @@ public class waterGen : MonoBehaviour {
         else
             return false;
     }
-
-
-    /*void UpdatePosMap()
-    {
-        usedPositions.Add(currentPos);
-        currentPos = Helpers.CalculatePos(currentPos, Variables.rotationY);
-    }*/
+    
 
 
     void GenWater(GameObject water)

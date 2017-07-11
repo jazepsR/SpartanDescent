@@ -14,7 +14,8 @@ public static class Variables {
     public static int health = 5;
     public static int spearCount = 20;
 
-
+    public static int FireTreshold = 10;
+    public static int LonelyTreshold = 18;
     public static float waterLevel = 0.53f;
     public static float NormalTurnSpeed = 225;
     public static float turnSpeed = 225;
