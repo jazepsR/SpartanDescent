@@ -30,6 +30,7 @@ public class waterScript : MonoBehaviour {
 	public float rotation = 0;
 	public Transform brokenBoatPos;
 	public GameObject barrel;
+    public GameObject wildfire;
    GameObject wolf;
 	float wolfFreq = 0.4f;
 	Mesh mesh;
@@ -38,21 +39,22 @@ public class waterScript : MonoBehaviour {
 	
 	void Start () {
         quiver = Resources.Load("prefabs/quiver") as GameObject;
+        wildfire = Resources.Load("prefabs/WildFire") as GameObject;
         mesh = GetComponent<MeshFilter>().mesh;
 		vertices = mesh.vertices;
 		try
 		{
             if (Time.timeSinceLevelLoad > 1.0f)
             {
-                if (SceneManager.GetActiveScene().name == "Level1")
+                if (Variables.currentArea == 0)
                 {
                     rock = Resources.Load("prefabs/rock") as GameObject;
                 }
-                if (SceneManager.GetActiveScene().name == "Level2")
+                if (Variables.currentArea == 1)
                 {
                     rock = Resources.Load("prefabs/fireRock") as GameObject;
                 }
-                if (SceneManager.GetActiveScene().name == "Level3")
+                if (Variables.currentArea == 2)
                 {
                     rock = Resources.Load("prefabs/desolateRock") as GameObject;
                 }
@@ -64,10 +66,15 @@ public class waterScript : MonoBehaviour {
                     if (Variables.hasBarrel)
                     {
                         Vector3 barrelPoint = transform.TransformPoint(vertices[UnityEngine.Random.Range(0, vertices.Length - 1)]);
-                        GameObject barrelObj =Instantiate(barrel, new Vector3(barrelPoint.x, barrelPoint.y + 0.1f, barrelPoint.z), UnityEngine.Random.rotation);
+                        GameObject barrelObj = Instantiate(barrel, new Vector3(barrelPoint.x, barrelPoint.y + 0.1f, barrelPoint.z), UnityEngine.Random.rotation);
                         barrelObj.transform.SetParent(transform, true);
                     }
-
+                    if (Variables.hasWildfire)
+                    {
+                        Vector3 wildfirePoint = transform.TransformPoint(vertices[UnityEngine.Random.Range(0, vertices.Length - 1)]);
+                        GameObject wildfireObj = Instantiate(wildfire, new Vector3(wildfirePoint.x, wildfirePoint.y + 0.1f, wildfirePoint.z), UnityEngine.Random.rotation);
+                        wildfireObj.transform.SetParent(transform, true);
+                    }
                 }
 
                 if (UnityEngine.Random.Range(0.0f, 1f) > 0.1f)

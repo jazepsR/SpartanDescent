@@ -201,7 +201,33 @@ public class collisionHandler : MonoBehaviour {
             GameObject InstantiatedObj = Instantiate(textObj, GameObject.Find("Canvas").transform, false);            
             Time.timeScale = 0.0f;
         }
+<<<<<<< HEAD
         
+=======
+        if (col.tag == "barrelTrigger")
+        {
+
+            Vector3 expDir = Vector3.Normalize(transform.position - col.gameObject.transform.position);
+            rb.AddForce(2000* rb.mass * expDir);
+            Variables.health--;
+            GameObject exp = Instantiate(explosion, col.transform.position, Quaternion.identity);
+            Variables.mainAudioSource.PlayOneShot(explosionSound);
+            Destroy(exp, 3.0f);
+            Destroy(col.gameObject);
+
+
+        }
+        if (col.tag == "WildFiretrigger")
+        {
+            Vector3 expDir = Vector3.Normalize(transform.position - col.gameObject.transform.position);
+            rb.AddForce(2000 * rb.mass * expDir);
+            Variables.health--;
+            GameObject exp = Instantiate(explosion, col.transform.position, Quaternion.identity);
+            Variables.mainAudioSource.PlayOneShot(explosionSound);
+            Destroy(exp, 3.0f);
+            Destroy(col.gameObject);
+        }
+>>>>>>> origin/master
 
         /*if (col.tag == "spear")
         {
