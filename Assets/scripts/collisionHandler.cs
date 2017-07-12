@@ -215,7 +215,7 @@ public class collisionHandler : MonoBehaviour {
         {
             Vector3 expDir = Vector3.Normalize(transform.position - col.gameObject.transform.position);
             rb.AddForce(2000 * rb.mass * expDir);
-            Variables.health=-2;
+            Variables.health -=2;
             GameObject exp = Instantiate(explosion, col.transform.position, Quaternion.identity);
             Variables.mainAudioSource.PlayOneShot(explosionSound);
             Destroy(exp, 3.0f);
