@@ -14,8 +14,8 @@ public class character
     public int oldAge;
     public int deathAge;
     public List<Trait> charTraits = new List<Trait>();
-    private string[] goodTraits = new string[] { "Strong", "Bountiful", "Dexterious", "Tough", "Youthful", "Beautiful" };
-    private string[] badTraits = new string[] { "Frail", "Barren", "Clumsy", "Brittle", "Old before their time", "Unsightly" };
+    private string[] goodTraits = new string[] { "Strong", "Bountiful", "Dexterious", "Tough", "Youthful", "Beautiful" , "Lucky"};
+    private string[] badTraits = new string[] { "Frail", "Barren", "Clumsy", "Brittle", "Old before their time", "Unsightly", "Unlucky" };
     private int[] traitRandomSeed = new int[] { 0, 1, 1, 2 };
     public List<string> activeTraits = new List<string>();
     public int beauty;
