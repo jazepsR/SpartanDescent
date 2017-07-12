@@ -31,6 +31,7 @@ public class waterScript : MonoBehaviour {
 	public Transform brokenBoatPos;
 	public GameObject barrel;
     public GameObject wildfire;
+    public GameObject barrel2;
    GameObject wolf;
 	float wolfFreq = 0.4f;
 	Mesh mesh;
@@ -40,6 +41,7 @@ public class waterScript : MonoBehaviour {
 	void Start () {
         quiver = Resources.Load("prefabs/quiver") as GameObject;
         wildfire = Resources.Load("prefabs/WildFire") as GameObject;
+        barrel2 = Resources.Load("prefabs/barrel2") as GameObject;
         mesh = GetComponent<MeshFilter>().mesh;
 		vertices = mesh.vertices;
 		try
@@ -74,6 +76,12 @@ public class waterScript : MonoBehaviour {
                         Vector3 wildfirePoint = transform.TransformPoint(vertices[UnityEngine.Random.Range(0, vertices.Length - 1)]);
                         GameObject wildfireObj = Instantiate(wildfire, new Vector3(wildfirePoint.x, wildfirePoint.y + 0.1f, wildfirePoint.z), UnityEngine.Random.rotation);
                         wildfireObj.transform.SetParent(transform, true);
+                    }
+                    if (Variables.hasBarrel2)
+                    {
+                        Vector3 barrel2Point = transform.TransformPoint(vertices[UnityEngine.Random.Range(0, vertices.Length - 1)]);
+                        GameObject barrel2Obj = Instantiate(barrel2, new Vector3(barrel2Point.x, barrel2Point.y + 0.1f, barrel2Point.z), UnityEngine.Random.rotation);
+                        barrel2Obj.transform.SetParent(transform, true);
                     }
                 }
 
