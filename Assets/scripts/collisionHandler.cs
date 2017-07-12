@@ -10,7 +10,7 @@ public class collisionHandler : MonoBehaviour {
     public AudioClip hitRockSound;
     public AudioClip getSpearSound;
     public AudioClip explosionSound;
-    
+    public AudioClip defuseSound;
     //public AudioClip gateSound;
     Rigidbody rb;    
     // Use this for initialization
@@ -45,8 +45,30 @@ public class collisionHandler : MonoBehaviour {
             }
 
         }
-      
-        
+        if (col.gameObject.tag == "barrelTrigger")
+        {
+            float blowUpChance = 0.7f;
+            if (Variables.playerStats.activeTraits.Contains("Lucky"))
+                blowUpChance = 0.9f;
+            if (Variables.playerStats.activeTraits.Contains("Unlucky"))
+                blowUpChance = 1.0f;
+            if (Random.Range(0.0f, 1.0f) < blowUpChance)
+            {
+                Vector3 expDir = Vector3.Normalize(transform.position - col.gameObject.transform.position);
+                rb.AddForce(2000 * rb.mass * expDir);
+                Variables.health--;
+                GameObject exp = Instantiate(explosion, col.transform.position, Quaternion.identity);
+                Variables.mainAudioSource.PlayOneShot(explosionSound);
+                Destroy(exp, 3.0f);
+                Destroy(col.gameObject);
+            }
+            else
+            {
+                Variables.mainAudioSource.PlayOneShot(defuseSound);
+            }
+        }
+
+
 
     }
     void OnTriggerEnter(Collider col)
@@ -179,19 +201,7 @@ public class collisionHandler : MonoBehaviour {
             GameObject InstantiatedObj = Instantiate(textObj, GameObject.Find("Canvas").transform, false);            
             Time.timeScale = 0.0f;
         }
-        if (col.tag == "barrelTrigger")
-        {
-
-            Vector3 expDir = Vector3.Normalize(transform.position - col.gameObject.transform.position);
-            rb.AddForce(2000* rb.mass * expDir);
-            Variables.health--;
-            GameObject exp = Instantiate(explosion, col.transform.position, Quaternion.identity);
-            Variables.mainAudioSource.PlayOneShot(explosionSound);
-            Destroy(exp, 3.0f);
-            Destroy(col.gameObject);
-
-
-        }
+        
 
         /*if (col.tag == "spear")
         {
