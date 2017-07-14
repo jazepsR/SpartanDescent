@@ -24,6 +24,7 @@ public class LevelSetup : MonoBehaviour {
         {
             case Variables.levels.normal:
                 Variables.hasBarrel = true;
+                Variables.hasBarrel2 = false;
                 Variables.hasWolves = false;
                 Variables.hasGhosts = false;
                 Variables.hasHands = false;
@@ -34,6 +35,7 @@ public class LevelSetup : MonoBehaviour {
                 break;
             case Variables.levels.fire:
                 Variables.hasBarrel = true;
+                Variables.hasBarrel2 = true;
                 Variables.hasWolves = false;
                 Variables.hasGhosts = true;
                 Variables.hasHands = false;
@@ -43,6 +45,7 @@ public class LevelSetup : MonoBehaviour {
                 break;
             case Variables.levels.desolate:
                 Variables.hasBarrel = false;
+                Variables.hasBarrel2 = true;
                 Variables.hasWolves = true;
                 Variables.hasGhosts = true;
                 Variables.hasHands = true;

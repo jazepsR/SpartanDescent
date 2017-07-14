@@ -233,6 +233,16 @@ public class collisionHandler : MonoBehaviour {
             Destroy(exp, 3.0f);
             Destroy(col.gameObject);
         }
+        if (col.tag == "barrel")
+        {
+            Vector3 expDir = Vector3.Normalize(transform.position - col.gameObject.transform.position);
+            rb.AddForce(2000 * rb.mass * expDir);
+            Variables.health -=2;
+            GameObject exp = Instantiate(explosion, col.transform.position, Quaternion.identity);
+            Variables.mainAudioSource.PlayOneShot(explosionSound);
+            Destroy(exp, 3.0f);
+            Destroy(col.gameObject);
+        }
 
 
         /*if (col.tag == "spear")

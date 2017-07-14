@@ -23,13 +23,15 @@ public class MainMenu : MonoBehaviour {
         if (GoalChecker.CompletedIntro)
             SceneManager.LoadScene("hub");
         else
+            Variables.currentArea = 0;
             SceneManager.LoadScene("Level1");
     }
     public void NewGameBtn()
     {
         source.PlayOneShot(btnSound);
         Variables.playerStats = new character(Helpers.GetName(true));
-        GoalChecker.ClearGoals();        
+        GoalChecker.ClearGoals();
+        Variables.currentArea = 0;
         SceneManager.LoadScene("Level1");        
     }
 }

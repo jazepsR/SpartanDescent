@@ -34,6 +34,7 @@ public static class Variables {
     public static bool hasGhosts = false;
     public static bool hasHands = false;
     public static bool hasWildfire = true;
+    public static bool hasBarrel2 = true;
     public static int currentArea = 0;
 
     public static bool shownLevelHelp = false;
