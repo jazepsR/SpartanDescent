@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class collisionHandler : MonoBehaviour {
     public Transform boatFront;
     public GameObject explosion;
+    GameObject explosionGreen;
     public proximityScript ProxScript;
     public AudioClip hitRockSound;
     public AudioClip getSpearSound;
@@ -14,7 +15,8 @@ public class collisionHandler : MonoBehaviour {
     //public AudioClip gateSound;
     Rigidbody rb;    
     // Use this for initialization
-    void Start () {        
+    void Start () {
+        explosionGreen = Resources.Load("prefabs/explosionGreen") as GameObject;      
         rb = GetComponent<Rigidbody>();
         
 
@@ -67,6 +69,28 @@ public class collisionHandler : MonoBehaviour {
                 Variables.mainAudioSource.PlayOneShot(defuseSound);
             }
         }
+        if (col.gameObject.tag == "barrel")
+        {
+            float blowUpChance = 0.7f;
+            if (Variables.playerStats.activeTraits.Contains("Lucky"))
+                blowUpChance = 0.9f;
+            if (Variables.playerStats.activeTraits.Contains("Unlucky"))
+                blowUpChance = 1.0f;
+            if (Random.Range(0.0f, 1.0f) < blowUpChance)
+            {
+                Vector3 expDir = Vector3.Normalize(transform.position - col.gameObject.transform.position);
+                rb.AddForce(2000 * rb.mass * expDir);
+                Variables.health = Variables.health - 2;
+                GameObject exp = Instantiate(explosionGreen, col.transform.position, Quaternion.identity);
+                Variables.mainAudioSource.PlayOneShot(explosionSound);
+                Destroy(exp, 3.0f);
+                Destroy(col.gameObject);
+            }
+            else
+            {
+                Variables.mainAudioSource.PlayOneShot(defuseSound);
+            }
+        }
 
 
 
@@ -104,9 +128,29 @@ public class collisionHandler : MonoBehaviour {
             Destroy(col.gameObject, 5.0f);
             GetComponent<PlayerController>().ChangeLocalRot(rotation);
             Variables.WaterGen.GenRandomWater();
-           // Debug.Log("Hit turn");
+            Variables.distance++;
+            // Debug.Log("Hit turn");
         }
-        if(col.tag == "drop")
+        if (col.tag == "splitR")
+        {
+            col.tag = "Untagged";
+            col.gameObject.transform.parent.gameObject.GetComponent<waterScript>().nextWater1.Destroy(2f);
+            Destroy(col.gameObject.transform.parent.gameObject, 2.2f);
+            Variables.WaterGen.GenRandomWater();
+            Variables.distance++;
+            // Debug.Log("Hit turn");
+        }
+        if (col.tag == "splitL")
+        {
+            col.tag = "Untagged";           
+            col.gameObject.GetComponent<waterScript>().nextWater2.Destroy(2f);
+            Destroy(col.gameObject, 2.2f);
+            Variables.WaterGen.GenRandomWater();
+            Variables.distance++;
+            // Debug.Log("Hit turn");
+        }
+
+        if (col.tag == "drop")
         {
             Variables.waterLevel -= 5.65f;
         }
@@ -145,6 +189,7 @@ public class collisionHandler : MonoBehaviour {
             Destroy(col.gameObject, 5.0f);            
             Variables.WaterGen.GenRandomWater();
             skyboxControl.Instance.ChangeSkybox(1);
+            Variables.distance++;
             /*
             Variables.currentLVL = Variables.levels.fire;
             SceneManager.LoadScene("Level2");
@@ -163,6 +208,7 @@ public class collisionHandler : MonoBehaviour {
             Destroy(col.gameObject, 5.0f);
             Variables.WaterGen.GenRandomWater();
             skyboxControl.Instance.ChangeSkybox(2);
+            Variables.distance++;
             /*
             Variables.currentLVL = Variables.levels.desolate;          
             SceneManager.LoadScene("Level3");
@@ -206,21 +252,12 @@ public class collisionHandler : MonoBehaviour {
             Vector3 expDir = Vector3.Normalize(transform.position - col.gameObject.transform.position);
             rb.AddForce(2000 * rb.mass * expDir);
             Variables.health--;
-            GameObject exp = Instantiate(explosion, col.transform.position, Quaternion.identity);
+            GameObject exp = Instantiate(explosionGreen, col.transform.position, Quaternion.identity);
             Variables.mainAudioSource.PlayOneShot(explosionSound);
             Destroy(exp, 3.0f);
             Destroy(col.gameObject);
         }
-        if (col.tag == "barrel")
-        {
-            Vector3 expDir = Vector3.Normalize(transform.position - col.gameObject.transform.position);
-            rb.AddForce(2000 * rb.mass * expDir);
-            Variables.health -=2;
-            GameObject exp = Instantiate(explosion, col.transform.position, Quaternion.identity);
-            Variables.mainAudioSource.PlayOneShot(explosionSound);
-            Destroy(exp, 3.0f);
-            Destroy(col.gameObject);
-        }
+       
 
 
         /*if (col.tag == "spear")

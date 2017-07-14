@@ -31,7 +31,7 @@ public class newMenuScript : MonoBehaviour {
         }
         spearCount = Variables.spearCount;
 
-        if (age != Variables.playerStats.age)
+        if (Variables.playerStats != null && age != Variables.playerStats.age)
         {
             AgeText.text = Variables.playerStats.age.ToString();
             StartCoroutine(BlinkText(0.5f,AgeText));
@@ -46,10 +46,11 @@ public class newMenuScript : MonoBehaviour {
                 else
                     img.SetActive(false);
             }
+            age = Variables.playerStats.age;
         }
 
 
-        age = Variables.playerStats.age;
+        
     }
     public IEnumerator BlinkText(float t, Text i)
     {

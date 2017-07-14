@@ -11,6 +11,7 @@ public class waterScript : MonoBehaviour {
 	public Transform frontL;
 	public Transform frontR;
 	public Transform joinPoint;
+    public Transform joinPointL;
 	public Transform GatePoint;
 
 	Vector3[] vertices;
@@ -19,13 +20,20 @@ public class waterScript : MonoBehaviour {
 	private List<int> backList = new List<int>();
 	private List<int> frontListL = new List<int>();
 	private List<int> frontListR = new List<int>();
-	
+    public bool isSplit = false;
 	public List<Vector4> backVectors = new List<Vector4>(), frontVectorsR = new List<Vector4>(), frontVectorsL = new List<Vector4>();
 	[HideInInspector]
 	public waterScript PrevWater;
+    [HideInInspector]
+    public bool spawnedL = false;
+    //[HideInInspector]
+    public waterScript nextWater1 = null;
+    public waterScript nextWater2 = null;
 	public bool FlipZ = false;
 	public float waveSpeed = 1f;
 	public float amplitude = 0.1f;
+    [HideInInspector]
+    public float lastTileRot = 0.0f;
 	public Variables.dir sortDir = Variables.dir.z;
 	public float rotation = 0;
 	public Transform brokenBoatPos;
@@ -37,7 +45,7 @@ public class waterScript : MonoBehaviour {
 	Mesh mesh;
 	GameObject rock;
     GameObject quiver;
-	
+    public bool ToDie = false;
 	void Start () {
         quiver = Resources.Load("prefabs/quiver") as GameObject;
         wildfire = Resources.Load("prefabs/WildFire") as GameObject;
@@ -68,19 +76,19 @@ public class waterScript : MonoBehaviour {
                     if (Variables.hasBarrel)
                     {
                         Vector3 barrelPoint = transform.TransformPoint(vertices[UnityEngine.Random.Range(0, vertices.Length - 1)]);
-                        GameObject barrelObj = Instantiate(barrel, new Vector3(barrelPoint.x, barrelPoint.y + 0.1f, barrelPoint.z), UnityEngine.Random.rotation);
+                        GameObject barrelObj = Instantiate(barrel, new Vector3(barrelPoint.x, barrelPoint.y + 0.05f, barrelPoint.z), UnityEngine.Random.rotation);
                         barrelObj.transform.SetParent(transform, true);
                     }
                     if (Variables.hasWildfire)
                     {
                         Vector3 wildfirePoint = transform.TransformPoint(vertices[UnityEngine.Random.Range(0, vertices.Length - 1)]);
-                        GameObject wildfireObj = Instantiate(wildfire, new Vector3(wildfirePoint.x, wildfirePoint.y + 0.1f, wildfirePoint.z), UnityEngine.Random.rotation);
+                        GameObject wildfireObj = Instantiate(wildfire, new Vector3(wildfirePoint.x, wildfirePoint.y - 0.1f, wildfirePoint.z), Quaternion.identity);
                         wildfireObj.transform.SetParent(transform, true);
                     }
                     if (Variables.hasBarrel2)
                     {
                         Vector3 barrel2Point = transform.TransformPoint(vertices[UnityEngine.Random.Range(0, vertices.Length - 1)]);
-                        GameObject barrel2Obj = Instantiate(barrel2, new Vector3(barrel2Point.x, barrel2Point.y + 0.1f, barrel2Point.z), UnityEngine.Random.rotation);
+                        GameObject barrel2Obj = Instantiate(barrel2, new Vector3(barrel2Point.x, barrel2Point.y+0.05f, barrel2Point.z), UnityEngine.Random.rotation);
                         barrel2Obj.transform.SetParent(transform, true);
                     }
                 }
@@ -138,7 +146,7 @@ public class waterScript : MonoBehaviour {
 				}
 			
 			//Last row, right side (optional)
-			if ( frontR!= null && vertices[i].x < frontR.localPosition.x && vertices[i].z > frontR.localPosition.z)
+			if ( frontR!= null && vertices[i].x > frontR.localPosition.x && vertices[i].z < frontR.localPosition.z)
 			{
 				frontVectorsR.Add(new Vector4(vertices[i].x, vertices[i].y, vertices[i].z, i));                
 			}
@@ -169,6 +177,17 @@ public class waterScript : MonoBehaviour {
 		}
 
 	}
+
+
+    public void Destroy(float timeToLive)
+    {
+        ToDie = true;
+        if (nextWater1 != null)
+            nextWater1.Destroy(2f);
+        if (nextWater2 != null)
+            nextWater2.Destroy(2f);
+        Destroy(gameObject, timeToLive);
+    }
 	public void SpawnBrokenBoat()
 	{
         if (Time.timeSinceLevelLoad > 1.0f)
@@ -227,14 +246,28 @@ public class waterScript : MonoBehaviour {
 					Vector3 vec = transform.TransformPoint(vertices[index]);
 					frontVectorsL[valIndex] = new Vector4(vec.x,vec.y,vec.z,frontVectorsL[valIndex].w);
 				}
-			}
+                if (frontListR.Contains(index))
+                {
+                    int valIndex = frontListR.IndexOf(index);
+                    Vector3 vec = transform.TransformPoint(vertices[index]);
+                    frontVectorsR[valIndex] = new Vector4(vec.x, vec.y, vec.z, frontVectorsR[valIndex].w);
+                }
+            }
 			else
 			{
-				if (PrevWater != null)
-				{
-					vertices[(int)backVectors[prevWaterIndex].w] = transform.InverseTransformPoint( PrevWater.frontVectorsL[prevWaterIndex]);
-					prevWaterIndex++;
-				}
+                if (PrevWater != null)
+                {
+                    if (spawnedL)
+                    {
+                        vertices[(int)backVectors[prevWaterIndex].w] = transform.InverseTransformPoint(PrevWater.frontVectorsR[prevWaterIndex]);
+                        prevWaterIndex++;
+                    }
+                    else
+                    {
+                        vertices[(int)backVectors[prevWaterIndex].w] = transform.InverseTransformPoint(PrevWater.frontVectorsL[prevWaterIndex]);
+                        prevWaterIndex++;
+                    }
+                }
 
 
 			}
