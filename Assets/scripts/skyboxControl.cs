@@ -12,7 +12,7 @@ public class skyboxControl : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        Instance = this;
+        Instance = this;        
         fogColor = RenderSettings.fogColor;
         firstSkybox = (Material)Resources.Load("NormalToFireSkybox", typeof(Material));
         secondSkybox = (Material)Resources.Load("FireToDesolateSkybox", typeof(Material));
