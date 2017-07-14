@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour {
         SetPlayerModel();
         
         Variables.player = transform;        
-        rb.AddForce(transform.forward*35000);        
+        rb.AddForce(transform.forward*90000);        
 		mass = rb.mass;             
         InvokeRepeating("PlaySailSound", 2.0f, 1.5f);
         if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("hub"))

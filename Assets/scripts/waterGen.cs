@@ -12,69 +12,44 @@ public class waterGen : MonoBehaviour {
     public GameObject[] waterTreasure;
     public GameObject[] waterIsland;
     public GameObject[] waterFall;
+    public GameObject[] waterRealSplit;
     public GameObject FireTransition;
     public GameObject DesolateTransition;
     GameObject Gate;
     enum tiles { straight, fall,left, right,split}
     List<tiles> bannedDoubles =new List<tiles> { tiles.left, tiles.right, tiles.fall, tiles.split };
-    tiles lastTile = tiles.straight;
-    private waterScript prevWaterScript;
+    tiles lastTile = tiles.straight;   
     List<Vector2> usedPositions = new List<Vector2>();
-    Vector2 currentPos = new Vector2(0, 0);
-    private Vector3 spawnpoint= new Vector3(0,0,2.5f);
+    Vector2 currentPos = new Vector2(0, 0); 
+    List<spawnData> spawnDataList= new List<spawnData>();
+    List<spawnData> nextSpawnDataList;    
 	// Use this for initialization
 	void Start ()
     {
         Gate = Resources.Load("prefabs/gate") as GameObject;
         Variables.distance = 0;
        // Variables.deathPositions.Add(3);
-        Variables.rotationY = 0;
+        //Variables.rotationY = 0;
         Variables.WaterGen = this;
         Variables.LevelDone = false;
 
-        //Variables.levelLength = 3;
-
-        GenWater(waterStraight[Variables.currentArea]);
-        GenWater(waterStraight[Variables.currentArea]);
-        GenWater(waterStraight[Variables.currentArea]);
+        GameObject water = Instantiate(waterStraight[Variables.currentArea],new Vector3(0,0,2.5f),Quaternion.identity);
+        spawnDataList.Add(new spawnData(false, water.GetComponent<waterScript>()));
         GenRandomWater();
         GenRandomWater();
-
-        /*for (int i = 0; i < 50; i++)
-        {
-            GenRandomWater();
-        }
-
-        //Test all bits
-        
-        GenWater(waterLeft);
-        GenWater(waterLeft);
-        GenWater(waterRight);
-        GenWater(waterLeft);
-        GenWater(waterSbend);
-        GenWater(waterLeft);
-        GenWater(waterStraight);
-        GenWater(waterLeft);
-        GenWater(waterRight);
-        GenWater(waterRight);
-        GenWater(waterStraight);
-        GenWater(waterRight);
-        GenWater(waterSbend);
-        GenWater(waterRight);
-        GenWater(waterSbend);
-        GenWater(waterSbend);
-        GenWater(waterStraight);
-        GenWater(waterSbend);
-        GenWater(waterStraight);
-        GenWater(waterStraight);
-        */
+        GenRandomWater();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-    public void GenRandomWater(int timeRan=0)
+    public void GenRandomWater()
+    {
+        nextSpawnDataList = new List<spawnData>();
+        foreach(spawnData data in spawnDataList)
+        {
+            if(!data.prevWater.ToDie)
+                GenOneRandomWater(data);
+        }
+        spawnDataList = nextSpawnDataList;
+    }
+    public void GenOneRandomWater(spawnData data ,int timeRan = 0)
     {
         if (Variables.LevelDone)
             return;
@@ -84,23 +59,24 @@ public class waterGen : MonoBehaviour {
             Debug.Log("Failed to find usable land piece");
             return;
         }
-        int rand = Random.Range(0, 10);
+        int rand = Random.Range(0, 12);
 
         if(Variables.distance >= Variables.levelLength && Variables.currentLVL == Variables.levels.item)
         {
             Variables.LevelDone = true;
-            GenWater(waterTreasure[Variables.currentArea]);
+            GenWater(data,waterTreasure[Variables.currentArea]);
             return;
         }
+        //TODO: figure out this stuff for split? Maybe spawns in both?
         if(Variables.distance == Variables.FireTreshold)
         {
-            GenWater(FireTransition);
+            GenWater(data, FireTransition);
             Variables.currentArea = 1;
             return;
         }
         if (Variables.distance == Variables.LonelyTreshold)
         {
-            GenWater(DesolateTransition);
+            GenWater(data, DesolateTransition);
             Variables.currentArea = 2;
             return;
         }
@@ -112,83 +88,91 @@ public class waterGen : MonoBehaviour {
             case 0:
                 if (CheckMapPos(tiles.straight))
                 {
-                    GenRandomWater(++timeRan);
+                    GenOneRandomWater(data,++timeRan);
                 }
                 else
                 {
-                    GenWater(waterSbend[Variables.currentArea]);
-                    lastTile = tiles.straight;
-                   // UpdatePosMap();
+                    GenWater(data, waterSbend[Variables.currentArea]);
+                    lastTile = tiles.straight;                  
                 }
                 break;
             case 1:
                 if (CheckMapPos(tiles.right))
                 {
-                    GenRandomWater(++timeRan);
+                    GenOneRandomWater(data, ++timeRan);
                 }
                 else
                 { 
-                GenWater(waterRight[Variables.currentArea]);
+                GenWater(data, waterRight[Variables.currentArea]);
                 lastTile = tiles.right;
                 }
                 break;
             case 2:
                 if(CheckMapPos(tiles.left))
                 {
-                    GenRandomWater(++timeRan);
+                    GenOneRandomWater(data, ++timeRan);
                 }
                 else
                 {
-                    GenWater(waterLeft[Variables.currentArea]);
+                    GenWater(data, waterLeft[Variables.currentArea]);
                     lastTile = tiles.left;
                 }
                 break;
             case 3:
                 if (CheckMapPos(tiles.split))
                 {
-                    GenRandomWater(++timeRan);
+                    GenOneRandomWater(data, ++timeRan);
                 }
                 else
                 {
-                    GenWater(waterSplit[Variables.currentArea]);
+                    GenWater(data, waterSplit[Variables.currentArea]);
                     lastTile = tiles.split;                   
                 }
                 break;
             case 4:
                 if (CheckMapPos(tiles.straight))
                 {
-                    GenRandomWater(++timeRan);
+                    GenOneRandomWater(data, ++timeRan);
                 }
                 else
                 {
-                    GenWater(waterIsland[Variables.currentArea]);
+                    GenWater(data, waterIsland[Variables.currentArea]);
                     lastTile = tiles.straight;                    
                 }
                 break;
             case 5:
                 if (CheckMapPos(tiles.fall))
                 {
-                    GenRandomWater(++timeRan);
+                    GenOneRandomWater(data, ++timeRan);
                 }
                 else
                 {
-                    GenWater(waterFall[Variables.currentArea]);
-                    lastTile = tiles.fall;
-                    // UpdatePosMap();
+                    GenWater(data, waterFall[Variables.currentArea]);
+                    lastTile = tiles.fall;                   
+                }
+                break;
+            case 6:
+                if (CheckMapPos(tiles.split))
+                {
+                    GenOneRandomWater(data, ++timeRan);
+                }
+                else
+                {
+                    GenWater(data, waterRealSplit[Variables.currentArea]);
+                    lastTile = tiles.split;                   
                 }
                 break;
             default:
                 if (CheckMapPos(tiles.straight))
                 {
-                    GenRandomWater(++timeRan);
+                    GenOneRandomWater(data, ++timeRan);
                 }
                 else
                 {
 
 
-                    GenWater(waterStraight[Variables.currentArea]);
-                    lastTile = tiles.straight;
-                    //  UpdatePosMap();
+                    GenWater(data, waterStraight[Variables.currentArea]);
+                    lastTile = tiles.straight;                
                 }
                 break;
         }
@@ -205,18 +189,49 @@ public class waterGen : MonoBehaviour {
     
 
 
-    void GenWater(GameObject water)
+    void GenWater(spawnData data,GameObject water)
     {
-        Variables.distance++;
+                    
+        var rot = Quaternion.Euler(new Vector3(0, data.prevWater.lastTileRot, 0));
+        Vector3 spawnloc;
+        if (data.forLeft)
+            spawnloc = data.prevWater.joinPointL.position;
+        else
+            spawnloc = data.prevWater.joinPoint.position;
+        GameObject instantiatedWater = Instantiate(water, spawnloc,rot);
+        waterScript script = instantiatedWater.GetComponent<waterScript>();      
+        script.lastTileRot = data.prevWater.lastTileRot + script.rotation;
+        script.spawnedL = data.forLeft;
+        script.PrevWater = data.prevWater;
+        if (data.forLeft)
+            data.prevWater.nextWater2 = script;
+        else
+            data.prevWater.nextWater1 = script;
+        nextSpawnDataList.Add(new spawnData(false,script));
+        if (script.isSplit)
+        {
+            nextSpawnDataList.Add(new spawnData(true, script));
+        }
 
-       
-        
-        
 
-        var rot = Quaternion.Euler(new Vector3(0, Variables.rotationY, 0));
-        GameObject instantiatedWater = Instantiate(water, spawnpoint,rot);
-        waterScript script = instantiatedWater.GetComponent<waterScript>();
-        Variables.rotationY += script.rotation;
+
+        //prevWaterScript = instantiatedWater.GetComponent<waterScript>();
+
+        //if(prevWaterScript.joinPointL != null)
+        {
+           // spawnpointL = prevWaterScript.joinPointL.position;
+           // GenWater(waterLeft[Variables.currentArea], false);
+           // GenWater(waterRight[Variables.currentArea], true);
+            
+        }
+
+
+
+
+        if (Variables.deathPositions.Contains(Variables.distance) && Variables.hasGhosts)
+        {
+            script.SpawnBrokenBoat();
+        }
 
         if (Variables.distance >= Variables.levelLength && water.Equals(waterStraight) && Variables.currentLVL != Variables.levels.item)
         {
@@ -231,18 +246,20 @@ public class waterGen : MonoBehaviour {
             }
             Debug.Log("Level done");
         }
-
-        if (Variables.deathPositions.Contains(Variables.distance) && Variables.hasGhosts)
-        {
-            script.SpawnBrokenBoat();
-        }
-
-
-        if (prevWaterScript != null)
-        {
-            instantiatedWater.GetComponent<waterScript>().PrevWater = prevWaterScript;
-        }
-        prevWaterScript = instantiatedWater.GetComponent<waterScript>();
-        spawnpoint = prevWaterScript.joinPoint.position;
     }
+}
+
+
+
+public class spawnData
+{
+    public bool forLeft;
+    public waterScript prevWater;
+    public spawnData(bool forLeft, waterScript prevWater)
+    {
+        this.forLeft = forLeft;
+        this.prevWater = prevWater;
+    }
+
+
 }

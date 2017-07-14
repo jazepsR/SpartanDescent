@@ -104,9 +104,29 @@ public class collisionHandler : MonoBehaviour {
             Destroy(col.gameObject, 5.0f);
             GetComponent<PlayerController>().ChangeLocalRot(rotation);
             Variables.WaterGen.GenRandomWater();
-           // Debug.Log("Hit turn");
+            Variables.distance++;
+            // Debug.Log("Hit turn");
         }
-        if(col.tag == "drop")
+        if (col.tag == "splitR")
+        {
+            col.tag = "Untagged";
+            col.gameObject.transform.parent.gameObject.GetComponent<waterScript>().nextWater1.Destroy(2f);
+            Destroy(col.gameObject.transform.parent.gameObject, 2.2f);
+            Variables.WaterGen.GenRandomWater();
+            Variables.distance++;
+            // Debug.Log("Hit turn");
+        }
+        if (col.tag == "splitL")
+        {
+            col.tag = "Untagged";           
+            col.gameObject.GetComponent<waterScript>().nextWater2.Destroy(2f);
+            Destroy(col.gameObject, 2.2f);
+            Variables.WaterGen.GenRandomWater();
+            Variables.distance++;
+            // Debug.Log("Hit turn");
+        }
+
+        if (col.tag == "drop")
         {
             Variables.waterLevel -= 5.65f;
         }
@@ -145,6 +165,7 @@ public class collisionHandler : MonoBehaviour {
             Destroy(col.gameObject, 5.0f);            
             Variables.WaterGen.GenRandomWater();
             skyboxControl.Instance.ChangeSkybox(1);
+            Variables.distance++;
             /*
             Variables.currentLVL = Variables.levels.fire;
             SceneManager.LoadScene("Level2");
@@ -163,6 +184,7 @@ public class collisionHandler : MonoBehaviour {
             Destroy(col.gameObject, 5.0f);
             Variables.WaterGen.GenRandomWater();
             skyboxControl.Instance.ChangeSkybox(2);
+            Variables.distance++;
             /*
             Variables.currentLVL = Variables.levels.desolate;          
             SceneManager.LoadScene("Level3");
