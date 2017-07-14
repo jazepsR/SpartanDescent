@@ -8,8 +8,8 @@ public class turtleScript : MonoBehaviour
     public float speed;
     public float turnforce;
     public float maxSpeed;
-    bool CanTurn = true;
-    bool should180 = false;
+    public bool CanTurn = true;
+    public bool should180 = false;
     // Use this for initialization
     void Start()
     {
@@ -32,6 +32,7 @@ public class turtleScript : MonoBehaviour
                 LeanTween.rotateLocal(gameObject,new Vector3(0,180,0), 0.7f).setOnComplete(AllowTurn);
             else
                 LeanTween.rotateLocal(gameObject, new Vector3(0, 0, 0), 0.7f).setOnComplete(AllowTurn);
+
             should180 = !should180;
 
         }
