@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class guiControl : MonoBehaviour
 {
     
-    public static int health=5;
+    public static int health = 5;
+    public static int fame = 0;
     private int prevHp = 5;
     public static int score = 0;
     public Text healthTxt;    

@@ -12,6 +12,8 @@ public static class Variables {
     public static List<float> deathPositions = new List<float>();
     public static Transform player;
     public static int health = 5;
+    public static int fame = 0;
+    public static int fameLvl = 0;
     public static int spearCount = 20;
     public static int FireTreshold = 5;
     public static int LonelyTreshold = 30;
@@ -72,6 +74,7 @@ public class SaveData
     public character playerStats;
     public List<float> deathPositions;
     public int health;
+    public int fame;
     public float turnSpeed;
     public bool shownLevelHelp;
     public bool shownHubHelp;

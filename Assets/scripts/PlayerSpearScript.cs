@@ -28,21 +28,23 @@ public class PlayerSpearScript : MonoBehaviour
    
     void OnTriggerEnter(Collider col)
     {
-       /* if (col.gameObject.tag == "barrel")
+       if (col.gameObject.tag == "barrelTrigger")
         {
             Instantiate(explosion, col.transform.position,Quaternion.identity);
             Destroy(col.transform.parent.gameObject);
             Variables.mainAudioSource.PlayOneShot(explosionSound);
             Variables.mainAudioSource.PlayOneShot(spearHitWood);
             GoalChecker.blownUpBarrels++;
+            Variables.fame += 2;
             if (GoalChecker.blownUpBarrels == 50)
             {
                 GoalChecker.BlewUp50Barrels = true;
                 Helpers.ShowGUIText("Goal completed", 3.5f);
+                Variables.fame += 50;
             }
             Debug.Log("Hit Barrel");
             Destroy(gameObject);
-        }*/
+        }
         if (col.gameObject.tag == "wolf")
         {
             Variables.mainAudioSource.PlayOneShot(wolfHurt);
@@ -50,6 +52,7 @@ public class PlayerSpearScript : MonoBehaviour
             Destroy(col.transform.parent.gameObject);
             Debug.Log("Hit wolf");
             Destroy(gameObject);
+            Variables.fame += 20;
         }
     }
 }
