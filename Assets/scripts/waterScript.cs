@@ -76,19 +76,19 @@ public class waterScript : MonoBehaviour {
                     if (Variables.hasBarrel)
                     {
                         Vector3 barrelPoint = transform.TransformPoint(vertices[UnityEngine.Random.Range(0, vertices.Length - 1)]);
-                        GameObject barrelObj = Instantiate(barrel, new Vector3(barrelPoint.x, barrelPoint.y + 0.1f, barrelPoint.z), UnityEngine.Random.rotation);
+                        GameObject barrelObj = Instantiate(barrel, new Vector3(barrelPoint.x, barrelPoint.y + 0.05f, barrelPoint.z), UnityEngine.Random.rotation);
                         barrelObj.transform.SetParent(transform, true);
                     }
                     if (Variables.hasWildfire)
                     {
                         Vector3 wildfirePoint = transform.TransformPoint(vertices[UnityEngine.Random.Range(0, vertices.Length - 1)]);
-                        GameObject wildfireObj = Instantiate(wildfire, new Vector3(wildfirePoint.x, wildfirePoint.y + 0.1f, wildfirePoint.z), UnityEngine.Random.rotation);
+                        GameObject wildfireObj = Instantiate(wildfire, new Vector3(wildfirePoint.x, wildfirePoint.y - 0.1f, wildfirePoint.z), Quaternion.identity);
                         wildfireObj.transform.SetParent(transform, true);
                     }
                     if (Variables.hasBarrel2)
                     {
                         Vector3 barrel2Point = transform.TransformPoint(vertices[UnityEngine.Random.Range(0, vertices.Length - 1)]);
-                        GameObject barrel2Obj = Instantiate(barrel2, new Vector3(barrel2Point.x, barrel2Point.y + 0.1f, barrel2Point.z), UnityEngine.Random.rotation);
+                        GameObject barrel2Obj = Instantiate(barrel2, new Vector3(barrel2Point.x, barrel2Point.y+0.05f, barrel2Point.z), UnityEngine.Random.rotation);
                         barrel2Obj.transform.SetParent(transform, true);
                     }
                 }

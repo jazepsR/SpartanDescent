@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class collisionHandler : MonoBehaviour {
     public Transform boatFront;
     public GameObject explosion;
+    GameObject explosionGreen;
     public proximityScript ProxScript;
     public AudioClip hitRockSound;
     public AudioClip getSpearSound;
@@ -14,7 +15,8 @@ public class collisionHandler : MonoBehaviour {
     //public AudioClip gateSound;
     Rigidbody rb;    
     // Use this for initialization
-    void Start () {        
+    void Start () {
+        explosionGreen = Resources.Load("prefabs/explosionGreen") as GameObject;      
         rb = GetComponent<Rigidbody>();
         
 
@@ -58,6 +60,28 @@ public class collisionHandler : MonoBehaviour {
                 rb.AddForce(2000 * rb.mass * expDir);
                 Variables.health--;
                 GameObject exp = Instantiate(explosion, col.transform.position, Quaternion.identity);
+                Variables.mainAudioSource.PlayOneShot(explosionSound);
+                Destroy(exp, 3.0f);
+                Destroy(col.gameObject);
+            }
+            else
+            {
+                Variables.mainAudioSource.PlayOneShot(defuseSound);
+            }
+        }
+        if (col.gameObject.tag == "barrel")
+        {
+            float blowUpChance = 0.7f;
+            if (Variables.playerStats.activeTraits.Contains("Lucky"))
+                blowUpChance = 0.9f;
+            if (Variables.playerStats.activeTraits.Contains("Unlucky"))
+                blowUpChance = 1.0f;
+            if (Random.Range(0.0f, 1.0f) < blowUpChance)
+            {
+                Vector3 expDir = Vector3.Normalize(transform.position - col.gameObject.transform.position);
+                rb.AddForce(2000 * rb.mass * expDir);
+                Variables.health = Variables.health - 2;
+                GameObject exp = Instantiate(explosionGreen, col.transform.position, Quaternion.identity);
                 Variables.mainAudioSource.PlayOneShot(explosionSound);
                 Destroy(exp, 3.0f);
                 Destroy(col.gameObject);
@@ -228,21 +252,12 @@ public class collisionHandler : MonoBehaviour {
             Vector3 expDir = Vector3.Normalize(transform.position - col.gameObject.transform.position);
             rb.AddForce(2000 * rb.mass * expDir);
             Variables.health--;
-            GameObject exp = Instantiate(explosion, col.transform.position, Quaternion.identity);
+            GameObject exp = Instantiate(explosionGreen, col.transform.position, Quaternion.identity);
             Variables.mainAudioSource.PlayOneShot(explosionSound);
             Destroy(exp, 3.0f);
             Destroy(col.gameObject);
         }
-        if (col.tag == "barrel")
-        {
-            Vector3 expDir = Vector3.Normalize(transform.position - col.gameObject.transform.position);
-            rb.AddForce(2000 * rb.mass * expDir);
-            Variables.health -=2;
-            GameObject exp = Instantiate(explosion, col.transform.position, Quaternion.identity);
-            Variables.mainAudioSource.PlayOneShot(explosionSound);
-            Destroy(exp, 3.0f);
-            Destroy(col.gameObject);
-        }
+       
 
 
         /*if (col.tag == "spear")

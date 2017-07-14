@@ -29,7 +29,7 @@ public class moveUpDown : MonoBehaviour {
         {
             float theta = Time.timeSinceLevelLoad / periodZ;
             float distance = amplitudeZ * Mathf.Sin(theta);
-            transform.Translate(Vector3.up * distance);
+            transform.position = transform.position +(Vector3.up * distance);
             if (useRot)
             {
                 transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0),Space.World);
