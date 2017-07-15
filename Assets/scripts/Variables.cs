@@ -15,7 +15,7 @@ public static class Variables {
     public static int fame = 0;
     public static int fameLvl = 0;
     public static int spearCount = 20;
-    public static int FireTreshold = 5;
+    public static int FireTreshold = 29;
     public static int LonelyTreshold = 30;
     public static float waterLevel = 0.53f;
     public static float NormalTurnSpeed = 225;

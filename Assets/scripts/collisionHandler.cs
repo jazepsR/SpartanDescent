@@ -153,6 +153,11 @@ public class collisionHandler : MonoBehaviour {
         if (col.tag == "drop")
         {
             Variables.waterLevel -= 5.65f;
+            zombieHandsScript[] hands = FindObjectsOfType<zombieHandsScript>();
+            foreach(zombieHandsScript hand in hands)
+            {
+                hand.HitWaterFall();
+            }
         }
 
         

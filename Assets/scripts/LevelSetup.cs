@@ -27,7 +27,7 @@ public class LevelSetup : MonoBehaviour {
                 Variables.hasBarrel2 = false;
                 Variables.hasWolves = false;
                 Variables.hasGhosts = false;
-                Variables.hasHands = false;
+                Variables.hasHands = true;
                 Variables.hasWildfire = false;
                 Variables.levelLength = 250;
                 if (Variables.shownLevelHelp)
