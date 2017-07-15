@@ -8,8 +8,7 @@ using UnityEngine.UI;
 public class guiControl : MonoBehaviour
 {
     
-    public static int health = 5;
-    public static int fame = 0;
+    public static int health = 5;   
     private int prevHp = 5;
     public static int score = 0;
     public Text healthTxt;    
@@ -31,8 +30,7 @@ public class guiControl : MonoBehaviour
         }
         
         if (Variables.health <= 0 && prevHp != Variables.health)
-        {
-            
+        {           
             Variables.deathPositions.Add(Variables.distance);
             Variables.playerStats = null;
             Variables.DeathMenu.menu.SetActive(true);

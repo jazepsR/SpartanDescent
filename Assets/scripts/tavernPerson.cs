@@ -40,7 +40,8 @@ public class tavernPerson : MonoBehaviour {
     }
     public void SetTexts()
     {
-        marrigeChance = Mathf.InverseLerp(0f, 20f, Mathf.Max(10 + Variables.playerStats.beauty - ch.beauty, 0.0f));
+        float marrigeVal = Mathf.Max(10 + Variables.playerStats.beauty - ch.beauty - 7f + Variables.playerStats.fameLVL * 5f, 0.0f);
+        marrigeChance = Mathf.InverseLerp(0f, 20f, marrigeVal);
         infoText.text = charName + "\n";
         marrigeChanceText.text= (marrigeChance * 100).ToString("F0") + "%";
         if(marrigeChance>= 0.7f)

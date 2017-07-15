@@ -41,6 +41,7 @@ public class waterScript : MonoBehaviour {
     public GameObject wildfire;
     public GameObject barrel2;
     public GameObject turtle;
+    public GameObject amphora;
    GameObject wolf;
 	float wolfFreq = 0.4f;
 	Mesh mesh;
@@ -48,6 +49,7 @@ public class waterScript : MonoBehaviour {
     GameObject quiver;
     public bool ToDie = false;
 	void Start () {
+        amphora = Resources.Load("prefabs/amphora") as GameObject;
         turtle = Resources.Load("prefabs/turtle") as GameObject;
         quiver = Resources.Load("prefabs/quiver") as GameObject;
         wildfire = Resources.Load("prefabs/WildFire") as GameObject;
@@ -109,8 +111,15 @@ public class waterScript : MonoBehaviour {
                     GameObject turtleObj = Instantiate(turtle, new Vector3(turtlePoint.x, turtlePoint.y , turtlePoint.z), Quaternion.Euler(0, 0, 0));
                     turtleObj.transform.SetParent(transform, true);
                 }
+                if (UnityEngine.Random.Range(0.0f, 1f) < 0.3f && UnityEngine.Random.Range(0.0f, 1f) > 0.2f)
+                {
+                    Vector3 amphoraPoint = transform.TransformPoint(vertices[UnityEngine.Random.Range(0, vertices.Length - 1)]);
+                    GameObject amphoraObj = Instantiate(amphora, new Vector3(amphoraPoint.x, amphoraPoint.y+0.15f, amphoraPoint.z), Quaternion.Euler(0, UnityEngine.Random.Range(0,360), 25f));
+                    amphoraObj.transform.SetParent(transform, true);
 
-                if (Variables.hasWolves && UnityEngine.Random.Range(0.0f, 1f) > (1 - wolfFreq) && name.Contains("Straight"))
+
+                }
+                    if (Variables.hasWolves && UnityEngine.Random.Range(0.0f, 1f) > (1 - wolfFreq) && name.Contains("Straight"))
                 {
                     wolf = Resources.Load("prefabs/wolf") as GameObject;
                     //Instantiate(wolf, brokenBoatPos, false);

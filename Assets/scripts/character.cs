@@ -19,6 +19,8 @@ public class character
     private int[] traitRandomSeed = new int[] { 0, 1, 1, 2 };
     public List<string> activeTraits = new List<string>();
     public int beauty;
+    public int fameLVL = 0;
+    public int fame = 0;
     public List<Item> inventory = new List<Item>();
     public int extraChildren = 0;
     public int age = 20;
@@ -168,6 +170,7 @@ public class character
     {
         string bio = name;
         bio += "\nBeauty: " + beauty.ToString() + "\n";
+        bio += "Fame: " + fameLVL.ToString() + "\n";
         foreach (string activeTrait in activeTraits)
         {
             bio += '\u2022' + " " + activeTrait + "\n";

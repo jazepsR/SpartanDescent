@@ -32,7 +32,7 @@ public class zombieHandsScript : MonoBehaviour {
     }
     void Reset()
     {
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = new Vector3(0, -30,0);
     }
 	void Update()
 	{
@@ -40,7 +40,7 @@ public class zombieHandsScript : MonoBehaviour {
         {
             if (!hasInitialized)
             {
-                transform.position = new Vector3(boatPos.position.x, 0.35f, boatPos.position.z);
+                transform.position = new Vector3(boatPos.position.x, boatPos.position.y, boatPos.position.z);
                 downDist = Random.Range(4f, 10f);
                 transform.Translate(Vector3.up * -downDist);
                 StartCoroutine("MoveUp");
@@ -69,6 +69,7 @@ public class zombieHandsScript : MonoBehaviour {
                 }
                 if (Input.GetKey(AttackKey))
                 {
+                    Variables.playerStats.fame += 7;
                     Variables.mainAudioSource.PlayOneShot(handsHurt);
                     Variables.mainAudioSource.PlayOneShot(handsAppear1);
                     StartCoroutine("MoveDown");

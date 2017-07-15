@@ -47,6 +47,11 @@ public class collisionHandler : MonoBehaviour {
             }
 
         }
+        if(col.gameObject.tag == "FameBoost")
+        {
+            Variables.playerStats.fame += 15;
+            Destroy(col.gameObject);
+        }
         if (col.gameObject.tag == "barrelTrigger")
         {
             float blowUpChance = 0.7f;
@@ -102,7 +107,7 @@ public class collisionHandler : MonoBehaviour {
             Variables.spearCount += 3;
             Destroy(col.gameObject);
             Variables.mainAudioSource.PlayOneShot(getSpearSound);
-
+            Variables.playerStats.fame += 3;
         }
         if(col.tag == "fire" || col.tag == "fire2")
         {
@@ -123,30 +128,27 @@ public class collisionHandler : MonoBehaviour {
         }
         if (col.tag == "waterTurn")
         {
-            col.tag = "Untagged";
+            
             float rotation = col.gameObject.GetComponent<waterScript>().rotation;
             Destroy(col.gameObject, 5.0f);
             GetComponent<PlayerController>().ChangeLocalRot(rotation);
-            Variables.WaterGen.GenRandomWater();
-            Variables.distance++;
+            DoNextWater(col);
             // Debug.Log("Hit turn");
         }
         if (col.tag == "splitR")
         {
-            col.tag = "Untagged";
+            
             col.gameObject.transform.parent.gameObject.GetComponent<waterScript>().nextWater1.Destroy(2f);
             Destroy(col.gameObject.transform.parent.gameObject, 2.2f);
-            Variables.WaterGen.GenRandomWater();
-            Variables.distance++;
+            DoNextWater(col);
             // Debug.Log("Hit turn");
         }
         if (col.tag == "splitL")
         {
-            col.tag = "Untagged";           
+                   
             col.gameObject.GetComponent<waterScript>().nextWater2.Destroy(2f);
             Destroy(col.gameObject, 2.2f);
-            Variables.WaterGen.GenRandomWater();
-            Variables.distance++;
+            DoNextWater(col);
             // Debug.Log("Hit turn");
         }
 
@@ -191,10 +193,10 @@ public class collisionHandler : MonoBehaviour {
         {
             Variables.currentLVL = Variables.levels.fire;
             LevelSetup.SetLVL(Variables.levels.fire);
-            Destroy(col.gameObject, 5.0f);            
-            Variables.WaterGen.GenRandomWater();
+            Destroy(col.gameObject, 5.0f);         
             skyboxControl.Instance.ChangeSkybox(1);
-            Variables.distance++;
+            Variables.playerStats.fame += 20;
+            DoNextWater(col);
             /*
             Variables.currentLVL = Variables.levels.fire;
             SceneManager.LoadScene("Level2");
@@ -210,10 +212,10 @@ public class collisionHandler : MonoBehaviour {
         {
             Variables.currentLVL = Variables.levels.desolate;
             LevelSetup.SetLVL(Variables.levels.desolate);
-            Destroy(col.gameObject, 5.0f);
-            Variables.WaterGen.GenRandomWater();
+            Destroy(col.gameObject, 5.0f);           
             skyboxControl.Instance.ChangeSkybox(2);
-            Variables.distance++;
+            Variables.playerStats.fame += 35;
+            DoNextWater(col);
             /*
             Variables.currentLVL = Variables.levels.desolate;          
             SceneManager.LoadScene("Level3");
@@ -272,5 +274,12 @@ public class collisionHandler : MonoBehaviour {
             Debug.Log("Hit by spear!");
         }*/
 
+    }
+    void DoNextWater(Collider col)
+    {
+        col.tag = "Untagged";
+        Variables.WaterGen.GenRandomWater();
+        Variables.distance++;
+        Variables.playerStats.fame++;
     }
 }

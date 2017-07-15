@@ -11,9 +11,7 @@ public static class Variables {
     public static float marrigeDiff = 2.0f;
     public static List<float> deathPositions = new List<float>();
     public static Transform player;
-    public static int health = 5;
-    public static int fame = 0;
-    public static int fameLvl = 0;
+    public static int health = 5;    
     public static int spearCount = 20;
     public static int FireTreshold = 29;
     public static int LonelyTreshold = 30;

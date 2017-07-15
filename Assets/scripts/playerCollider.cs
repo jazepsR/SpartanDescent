@@ -37,6 +37,7 @@ void OnTriggerEnter(Collider col)
             {
                 Debug.Log("Blocked wolf");
                 Variables.mainAudioSource.PlayOneShot(wolfDeflectSound);
+                Variables.playerStats.fame += 10;
                 GoalChecker.blockedWolves++;
                 if (GoalChecker.blockedWolves == 5)
                 {

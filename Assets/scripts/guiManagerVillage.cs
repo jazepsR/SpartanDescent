@@ -111,6 +111,7 @@ public class guiManagerVillage : MonoBehaviour {
     }
     void GenChildList()
     {
+
         //Create children list;
         int ChildCount = 3;
         if (Variables.playerStats.activeTraits.Contains("Bountiful"))
