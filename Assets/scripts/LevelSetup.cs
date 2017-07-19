@@ -8,7 +8,15 @@ public class LevelSetup : MonoBehaviour {
 	void Awake () {
 		Variables.spearCount = 12;
 		Variables.waterLevel = 0.53f;
-		if (Variables.currentLVL != Variables.levels.item)
+        Variables.barrel = Resources.Load("prefabs/barrel") as GameObject;
+        Variables.amphora = Resources.Load("prefabs/amphora") as GameObject;
+        Variables.turtle = Resources.Load("prefabs/turtle") as GameObject;
+        Variables.quiver = Resources.Load("prefabs/quiver") as GameObject;
+        Variables.wildfire = Resources.Load("prefabs/WildFire") as GameObject;
+        Variables.barrel2 = Resources.Load("prefabs/barrel2") as GameObject;
+        Variables.pan = Resources.Load("prefabs/Pan") as GameObject;
+        Variables.wolf = Resources.Load("prefabs/wolf") as GameObject;
+        if (Variables.currentLVL != Variables.levels.item)
 		{
 			Variables.currentLVL = currentLVL;
 		}

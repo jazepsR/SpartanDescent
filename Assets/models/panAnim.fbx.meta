@@ -1,0 +1,716 @@
+fileFormatVersion: 2
+guid: 6d1b8e3a676de7c43ac0fb4be1b1a8ff
+timeCreated: 1500404100
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Chest
+    100004: Chest.001
+    100006: Chest.002
+    100008: Chest.003
+    100010: Chest.004
+    100012: Chest.004_end
+    100014: Chest.005
+    100016: Chest.006
+    100018: Chest.007
+    100020: Chest.008
+    100022: Chest.008_end
+    100024: hair
+    100026: Head
+    100028: Head_end
+    100030: Leg_L
+    100032: Leg_R
+    100034: lowerBack
+    100036: Neck
+    100038: //RootNode
+    100040: Pelvis
+    100042: Shin_L
+    100044: Shin_L_end
+    100046: Shin_R
+    100048: Shin_R_end
+    100050: Thigh_L
+    100052: Thigh_R
+    400000: Armature
+    400002: Chest
+    400004: Chest.001
+    400006: Chest.002
+    400008: Chest.003
+    400010: Chest.004
+    400012: Chest.004_end
+    400014: Chest.005
+    400016: Chest.006
+    400018: Chest.007
+    400020: Chest.008
+    400022: Chest.008_end
+    400024: hair
+    400026: Head
+    400028: Head_end
+    400030: Leg_L
+    400032: Leg_R
+    400034: lowerBack
+    400036: Neck
+    400038: //RootNode
+    400040: Pelvis
+    400042: Shin_L
+    400044: Shin_L_end
+    400046: Shin_R
+    400048: Shin_R_end
+    400050: Thigh_L
+    400052: Thigh_R
+    4300000: hair
+    7400000: Idle
+    7400002: Armature|EmptyAction
+    7400004: PickUpDown
+    7400006: ThrowFwd
+    7400008: ThrowBack
+    7400010: Hurt
+    7400012: Dance
+    7400014: PickUpUp
+    9500000: //RootNode
+    13700000: hair
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/lowerBack
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004/Chest.004_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008/Chest.008_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L/Shin_L_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R/Shin_R_end
+        weight: 1
+      - path: hair
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: PickUpDown
+      takeName: Armature|ArmatureAction
+      firstFrame: 32
+      lastFrame: 46
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/lowerBack
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004/Chest.004_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008/Chest.008_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L/Shin_L_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R/Shin_R_end
+        weight: 1
+      - path: hair
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ThrowFwd
+      takeName: Armature|ArmatureAction
+      firstFrame: 62
+      lastFrame: 72
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/lowerBack
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004/Chest.004_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008/Chest.008_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L/Shin_L_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R/Shin_R_end
+        weight: 1
+      - path: hair
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ThrowBack
+      takeName: Armature|ArmatureAction
+      firstFrame: 72
+      lastFrame: 84
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/lowerBack
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004/Chest.004_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008/Chest.008_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L/Shin_L_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R/Shin_R_end
+        weight: 1
+      - path: hair
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hurt
+      takeName: Armature|ArmatureAction
+      firstFrame: 84
+      lastFrame: 125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/lowerBack
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004/Chest.004_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008/Chest.008_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L/Shin_L_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R/Shin_R_end
+        weight: 1
+      - path: hair
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dance
+      takeName: Armature|ArmatureAction
+      firstFrame: 125
+      lastFrame: 197
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/lowerBack
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004/Chest.004_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008/Chest.008_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L/Shin_L_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R/Shin_R_end
+        weight: 1
+      - path: hair
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: PickUpUp
+      takeName: Armature|ArmatureAction
+      firstFrame: 46
+      lastFrame: 62
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/lowerBack
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.001/Chest.002/Chest.003/Chest.004/Chest.004_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Chest.005/Chest.006/Chest.007/Chest.008/Chest.008_end
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/lowerBack/Chest/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Leg_L/Shin_L/Shin_L_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Leg_R/Shin_R/Shin_R_end
+        weight: 1
+      - path: hair
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.07
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

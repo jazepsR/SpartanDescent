@@ -13,7 +13,7 @@ public class waterScript : MonoBehaviour {
 	public Transform joinPoint;
     public Transform joinPointL;
 	public Transform GatePoint;
-
+    public Transform panPoint;
 	Vector3[] vertices;
 	private List<bool> directions = new List<bool>();
 	private List<float> orgPos = new List<float>();
@@ -37,23 +37,31 @@ public class waterScript : MonoBehaviour {
 	public Variables.dir sortDir = Variables.dir.z;
 	public float rotation = 0;
 	public Transform brokenBoatPos;
-	public GameObject barrel;
-    public GameObject wildfire;
-    public GameObject barrel2;
-    public GameObject turtle;
-    public GameObject amphora;
-   GameObject wolf;
+	GameObject barrel;
+    GameObject wildfire;
+    GameObject barrel2;
+    GameObject turtle;
+    GameObject amphora;
+    GameObject wolf;
+    GameObject pan;
 	float wolfFreq = 0.4f;
 	Mesh mesh;
 	GameObject rock;
     GameObject quiver;
     public bool ToDie = false;
 	void Start () {
-        amphora = Resources.Load("prefabs/amphora") as GameObject;
-        turtle = Resources.Load("prefabs/turtle") as GameObject;
-        quiver = Resources.Load("prefabs/quiver") as GameObject;
-        wildfire = Resources.Load("prefabs/WildFire") as GameObject;
-        barrel2 = Resources.Load("prefabs/barrel2") as GameObject;
+        barrel = Variables.barrel;
+        amphora = Variables.amphora;
+        turtle = Variables.turtle;
+        quiver = Variables.quiver;
+        wildfire = Variables.wildfire;
+        barrel2 = Variables.barrel2;
+        pan = Variables.pan;
+
+
+
+
+
         mesh = GetComponent<MeshFilter>().mesh;
 		vertices = mesh.vertices;
 		try
@@ -116,10 +124,14 @@ public class waterScript : MonoBehaviour {
                     Vector3 amphoraPoint = transform.TransformPoint(vertices[UnityEngine.Random.Range(0, vertices.Length - 1)]);
                     GameObject amphoraObj = Instantiate(amphora, new Vector3(amphoraPoint.x, amphoraPoint.y+0.15f, amphoraPoint.z), Quaternion.Euler(0, UnityEngine.Random.Range(0,360), 25f));
                     amphoraObj.transform.SetParent(transform, true);
-
-
                 }
-                    if (Variables.hasWolves && UnityEngine.Random.Range(0.0f, 1f) > (1 - wolfFreq) && name.Contains("Straight"))
+                if (UnityEngine.Random.Range(0.0f, 1f) < 0.5f && UnityEngine.Random.Range(0.0f, 1f) > 0.3f)
+                {
+                    // print("doing pan");
+                    GameObject panObj = Instantiate(pan, new Vector3(panPoint.position.x, panPoint.position.y + 1.45f, panPoint.position.z), Quaternion.Euler(0f, 50f, 0f));
+                    panObj.transform.SetParent(transform, true);
+                }
+                if (Variables.hasWolves && UnityEngine.Random.Range(0.0f, 1f) > (1 - wolfFreq) && name.Contains("Straight"))
                 {
                     wolf = Resources.Load("prefabs/wolf") as GameObject;
                     //Instantiate(wolf, brokenBoatPos, false);

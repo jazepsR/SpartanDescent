@@ -54,6 +54,17 @@ public static class Variables {
     public static Sprite[] shirts;
     public static GameObject finishDialog;
     public static GameObject GotItemMenu;
+
+    //Spawn objects
+    public static GameObject barrel;
+    public static GameObject amphora;
+    public static GameObject turtle;
+    public static GameObject quiver;
+    public static GameObject wildfire;
+    public static GameObject barrel2;
+    public static GameObject pan;
+    public static GameObject wolf;
+
     public static string[] maleNames = new string[] {"Teiresias","Erechtheus","Erginus","Hippon","Ephialtes","Amphidamos","Archesilaus","Pheronactus",
 "Nausithous","Meliboeus","Brygos","Rhadamanthos","Parmenides","Deiphonous","Clisthenes","Deon","Aetolos","Megistias","Zenodoros","Alcandros",
     "Hieronymus","Peolpidas","Simo","Helgesippos","Alcandros","Agetos","Callimorphus","Socus","Labotas","Panionos","Medios","Pidytes","Herakleitos",

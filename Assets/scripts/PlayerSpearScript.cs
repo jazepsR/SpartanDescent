@@ -28,15 +28,21 @@ public class PlayerSpearScript : MonoBehaviour
    
     void OnTriggerEnter(Collider col)
     {
-       if (col.gameObject.tag == "barrelTrigger" || col.gameObject.tag ==  "wildFiretrigger" )
+        if(col.gameObject.tag == "pan")
+        {
+            col.gameObject.GetComponent<PanScript>().GotHit(1);
+            Variables.playerStats.fame += 8;
+            Destroy(gameObject);
+        }
+       if ( col.gameObject.tag ==  "wildFiretrigger" )
         {
             Instantiate(explosion, col.transform.position,Quaternion.identity);
-            Destroy(col.transform.parent.gameObject);
+            //Destroy(col.transform.parent.gameObject);
             Variables.mainAudioSource.PlayOneShot(explosionSound);
             Variables.mainAudioSource.PlayOneShot(spearHitWood);
             
             Variables.playerStats.fame += 2;
-            if (col.gameObject.tag == "barrelTrigger")
+            /*if (col.gameObject.tag == "barrelTrigger")
             {
                 GoalChecker.blownUpBarrels++;
                 if (GoalChecker.blownUpBarrels == 50)
@@ -46,7 +52,7 @@ public class PlayerSpearScript : MonoBehaviour
                     Variables.playerStats.fame += 50;
                 }
                 Debug.Log("Hit Barrel");
-            }
+            }*/
             Destroy(gameObject);
         }
         if (col.gameObject.tag == "wolf")
